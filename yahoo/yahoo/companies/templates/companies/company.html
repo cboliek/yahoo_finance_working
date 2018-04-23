@@ -1,0 +1,54 @@
+{% extends "companies/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{% static "companies/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+  <h2>Company: {{ business }}</h2>
+  <h5>Category: {{ business.category }}</h5>
+
+
+<!-- this is where we will actually put each company's data -->
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <table id = "example" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Volume</th>
+            <th>Average Volume</th>
+            <th>Revenue</th>
+            <th>Day Minimum</th>
+            <th>Day Maximum</th>
+            <th>Year Minimum</th>
+            <th>Year Maximum</th>
+            <th>Previous Close</th>
+            <th>Opening</th>
+            <th>Ask</th>
+            <th>Bid</th>
+            <th>Market Cap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>put the weird chart thing here</p>
+    </div>
+  </div>
+</body>
+{% endblock %}
+
+{% block script %}
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock %}

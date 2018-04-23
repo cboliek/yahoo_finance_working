@@ -1,0 +1,44 @@
+<!-- this is our base html page, where we set a template that will fit every page we make -->
+<html lang="en">
+  <!-- we need to set parameters for the page, like the way it will appear on different devices and we also need to import the css files we are using -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Top Companies in North Carolina</title>
+    <link href="static/companies/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/companies/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <!-- now we will set parameters for how the site will look -->
+  <body>
+    {% block body %}
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: black; position: sticky; top: 0; z-index:1;">
+    <div class="container-fluid" style="display: inline;">
+      <div>
+    <a class="navbar-brand" href="companies/home.html" style="font-size: 30px; color: white;">Top Companies in North Carolina</a>
+    <a href="https://finance.yahoo.com" style="color: white; float: right; margin-top: 17px;">All of this data was scraped from Yahoo Finance</a>
+      </div>
+    </div>
+    </nav>
+        <div class="container">
+            {% block header %}
+            {% endblock %}
+            {% block breadcrumb_nav %}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        {% block breadcrumbs %}
+                        {% endblock %}
+                    </ol>
+                </nav>
+            {% endblock %}
+            {% block content %}{% endblock %}
+        </div>
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    {% block script %}{% endblock %}
+  </body>
