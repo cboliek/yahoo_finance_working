@@ -1,0 +1,28 @@
+[{
+  "Category": "technology",
+  "Freq": 9
+}, {
+  "Category": "business/finance",
+  "Freq": 5
+},{
+  "Category": "biotechnology/pharmaceuticals",
+  "Freq": 3
+},{
+  "Category": "food processing and manufacturing",
+  "Freq": 3
+},{
+  "Category": "energy",
+  "Freq": 1
+},{
+  "Category": "home and interiors",
+  "Freq": 6
+},{
+  "Category": "aerospace/defense",
+  "Freq": 2
+},{
+  "Category": "transporation",
+  "Freq": 2
+},{
+  "Category": "apparel",
+  "Freq": 1
+}]

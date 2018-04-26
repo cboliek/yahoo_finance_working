@@ -24,3 +24,7 @@ class Company(models.Model):
         #sort the info by name
         def __str__(self):
             return U'%s' %(self.name)
+
+class Category(models.Model):
+        company_category = models.CharField(unique=True, max_length=50, blank=True, null=True)
+        frequency = models.IntegerField(unique=False, blank=True, null=True)

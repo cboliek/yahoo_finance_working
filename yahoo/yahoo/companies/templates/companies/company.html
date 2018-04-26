@@ -9,46 +9,38 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 </head>
 <body>
-  <h2>Company: {{ business }}</h2>
-  <h5>Category: {{ business.category }}</h5>
-
-
-<!-- this is where we will actually put each company's data -->
   <div class="row">
-    <div class="col-md-12 col-sm-12">
-      <table id = "example" class="display" style="width:100%">
-        <thead>
-          <tr>
-            <th>Company</th>
-            <th>Category</th>
-            <th>Volume</th>
-            <th>Average Volume</th>
-            <th>Revenue</th>
-            <th>Day Minimum</th>
-            <th>Day Maximum</th>
-            <th>Year Minimum</th>
-            <th>Year Maximum</th>
-            <th>Previous Close</th>
-            <th>Opening</th>
-            <th>Ask</th>
-            <th>Bid</th>
-            <th>Market Cap</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-        </tbody>
-      </table>
+    <div class="col-12">
+      <h1 style="font-size: 35px;">Company: {{ business }}</h1>
     </div>
   </div>
+  <br>
   <div class="row">
-    <div class="col-md-12">
-      <p>put the weird chart thing here</p>
+    <div class="col-md-6 descriptions" style="height: 500px;">
+      <h5 style="text-transform: capitalize; font-size: 19px;">Category: {{ business.category }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Revenue: $ {{ business.revenue }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Volume: {{ business.volume }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Average Volume: {{ business.average_volume }}</h5>
+      <br>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Today's Stock Price Minimum: $ {{ business.day_minimum }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Today's Stock Price Maximum: $ {{ business.day_maximum }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">This Year's Stock Price Minimum: $ {{ business.year_minimum }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">This Year's Stock Price Maximum: $ {{ business.year_maximum }}</h5>
+      <br>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Previous Close: $ {{ business.previous_close }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Open: $ {{ business.opening }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Bid: $ {{ business.bid }}</h5>
+      <h5 style="text-transform: capitalize; font-size: 19px;">Ask: $ {{ business.ask }}</h5>
+    </div>
+    <div class="col-md-6" id="comp_bar" style="height: 360px; width: 100%;">
     </div>
   </div>
+
+<br>
 </body>
 {% endblock %}
 
 {% block script %}
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="{% static "companies/js/comp_bar.js" %}"></script>
 {% endblock %}

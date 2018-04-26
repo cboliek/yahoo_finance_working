@@ -15,5 +15,5 @@ urlpatterns = [
     # path('companies/', views.list_companies, name='companies-list'),
     # path('companies/<int:pk>', views.companies, name='companies-detail'),
     #url for the api
-    # path('api/', views.api, name='api'),
+    path('api/<int:pk>', views.api, name='api'),
 ]

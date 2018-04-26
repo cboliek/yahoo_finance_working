@@ -1,9 +1,13 @@
 {% extends "companies/base.html" %}
 {% load static %}
 
+
+
 {% block breadcrumbs %}
     <!-- <li class="breadcrumb-item active">Home</li> -->
 {% endblock %}
+
+
 
 {% block content %}
     <div class="row">
@@ -15,8 +19,8 @@
     <br>
     <div class="row">
       <div class="col-12">
-        <h4>Let's see where each of these top companies is located!</h4>
-        <p>Click on the markers to see which company you've found!</p>
+        <h4 style="text-transform: capitalize;">Let's see where each of these top companies is located!</h4>
+        <p style="color: black;">Click on the markers to see which company you've found! Then click on the link in the info window to see each company's stock detail page!</p>
       </div>
     </div>
     <div class="row">
@@ -28,22 +32,23 @@
   <br>
   <div class="row">
     <div class="col-12">
-      <h4>There are several types of companies that made the top 32 companies in North Carolina list! Let's take a look at what types of companies made the list, and how many fall under each category!</h4>
+      <h3>There are several types of companies that made the top 32 companies in North Carolina list!</h3>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h4 style="text-transform: capitalize;"> Let's take a look at what types of companies made the list, and how many fall under each category!</h4>
     </div>
   </div>
   <br>
     <div class="row">
         <div class="col-12">
-            <div id="by_category_bar" style="font: 10px sans-serif; background-color: steelblue; text-align: right; padding: 3px; margin: 1px; color: white;">
-              <div style="width: 40px;">4</div>
-              <div style="width: 80px;">8</div>
-              <div style="width: 150px;">15</div>
-              <div style="width: 160px;">16</div>
-              <div style="width: 230px;">23</div>
-              <div style="width: 420px;">42</div>
+            <div id="bar" style="fill: steelblue; margin-left: -10px;">
             </div>
         </div>
     </div>
+  <br>
 {% endblock %}
 
 {% block script %}
@@ -51,4 +56,8 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa-io6mJ3dqVGUCYO4oKNrkRr_sfCWad8&callback=initMap">
     </script>
     <script src="{% static "companies/js/map.js" %}"></script>
+    <!-- <svg width="960" height="500"></svg> -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="{% static "companies/js/bar.js" %}"></script>
+
 {% endblock %}
