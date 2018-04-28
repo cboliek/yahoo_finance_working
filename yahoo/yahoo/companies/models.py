@@ -25,6 +25,15 @@ class Company(models.Model):
         def __str__(self):
             return U'%s' %(self.name)
 
+        #trying to fix this for the API to work properly for my individual page's bar chart
+        def to_json(self):
+            return {
+                "Day_Minimum": self.day_minimum,
+                "Day_Maximum": self.day_maximum,
+                "Year_Minimum": self.year_minimum,
+                "Year_Maximum": self.year_maximum,
+        }
+
 class Category(models.Model):
         company_category = models.CharField(unique=True, max_length=50, blank=True, null=True)
         frequency = models.IntegerField(unique=False, blank=True, null=True)

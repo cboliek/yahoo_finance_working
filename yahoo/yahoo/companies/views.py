@@ -39,4 +39,4 @@ def api(request, pk):
     data = {
         "company": selected_company.bid
     }
-    return JsonResponse({"company": list(selected_company)})
+    return JsonResponse({"company": selected_company.to_json() })

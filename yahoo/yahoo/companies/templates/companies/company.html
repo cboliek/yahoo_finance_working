@@ -32,15 +32,20 @@
       <h5 style="text-transform: capitalize; font-size: 19px;">Bid: $ {{ business.bid }}</h5>
       <h5 style="text-transform: capitalize; font-size: 19px;">Ask: $ {{ business.ask }}</h5>
     </div>
-    <div class="col-md-6" id="comp_bar" style="height: 360px; width: 100%;">
+    <div class="col-md-6" id="test_bar" style="height: 360px; width: 100%;">
+      <h5>As we can see, {{ business }} is a {{ business.category }} company, so let's see how many companies of their category are faring compared to other categories. </h5>
     </div>
   </div>
 
 <br>
 </body>
+
 {% endblock %}
 
 {% block script %}
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="{% static "companies/js/comp_bar.js" %}"></script>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="{% static "companies/js/test_bar.js" %}"></script>
+
+
 {% endblock %}
