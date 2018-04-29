@@ -46,4 +46,5 @@ USER unc
 #RUN /opt/project/env/bin/pip3 install -r requirements.txt
 
 
-#adding all local code files
+# Adding all local code files
+COPY . .
